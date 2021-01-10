@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Tutorial
 from .models import Account
+from .models import Models
 
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -8,7 +9,9 @@ from django.contrib import auth
 # Create your views here.
 
 def home(request):
-    return render(request,'Main.html')
+    video = Tutorial.objects
+    models= Models.objects
+    return render(request,'Main.html',{'video':video ,'models':models})
 
 def login(request):
 	if request.method=='POST':

@@ -21,58 +21,33 @@
 
 <div class="second">
   <div class="video-heading">
-    <h1>Videos</h1>
+    <h1><a href="{%url 'tutorial'%}">Videos</a></h1>
   </div>
   <div class="videos-container">
     <div class="video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {%for i in video.all%}
+      <iframe width="560" height="315" src="{{i.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {%endfor%}
     </div>
   </div>
 </div>
 
 <div class="third">
   <div class="models-heading">
-    <h1>Models</h1>
+  <h1><a href="{%url 'models'%}">Models</a></h1>
   </div>
   <div class="models">
+  {%for j in models.all %}
     <figure>
-      <a href="images/model1.jpg">
-        <img src="{% static 'images/model1.jpg' %}" class='image'>
+      <a href="{{j.link}}">
+        <img src="{{j.img.url}}" class='image' alt="kfsdajoasdn">
       </a>
-      <a href="#" class='download'><span>Download</span></a>
-      <p>MKBHD STUDIO ajksfnpo ipuidf nuid fnidsa fsdaif nisdauu nfusai fsiudn f
-        i dsiuf niusd uids nius dusda fnidsa iasdu
-        s dinudnsf MKBHD STUDIO ajksfnpo ipuidf nuid fnidsa fsdaif nisdauu nfusai fsiudn f
-        
+      <a href="{{j.link}}" class='download'><span>Download</span></a>
+      <p>
+        {{j.title}}
       </p>
     </figure>
-    <figure>
-      <a href="images/model1.jpg">
-        <img src= "{% static 'images/model1.jpg' %}" class='image'>
-      </a>
-      <a href="#" class='download'><span>Download</span></a>
-      <p>MKBHD STUDIO ajksfnpo ipuidf nuid fnidsa fsdaif nisdauu nfusai fsiudn f
-        i dsiuf niusd uids nius dusda fnidsa iasdu
-        s dinudnsf 
-      </p>
-      
-    </figure>
-    <figure>
-      <a href="images/model1.jpg">
-        <img src="{% static 'images/model1.jpg' %}" class='image'>
-      </a>
-      <a href="#" class='download'><span>Download</span></a>
-      <p>MKBHD STUDIO ajksfnpo ipuidf nuid fnidsa fsdaif nisdauu nfusai fsiudn f
-        i dsiuf niusd uids nius dusda fnidsa iasdu
-        s dinudnsf 
-      </p>
-      
-    </figure>
+  {%endfor%}
   </div>
 </div>
 
