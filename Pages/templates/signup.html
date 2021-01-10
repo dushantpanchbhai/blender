@@ -8,8 +8,8 @@
             <h2>Sign Up</h2>
         </div>
         <div class="info">
-            <form action="" method="post">
-            
+            <form action="{% url 'signup' %}" method="post">
+                {%csrf_token%}
                 <input class='input' type="text" placeholder="Name" name='username' required>
                 <br>
                 <input class='input' type="text" placeholder="Email" name='email' required>

@@ -7,12 +7,17 @@
             <div class="title">
                 <h2>Log In</h2>
             </div>
+            {%if error%}
+                <script>
+                    alert('enter valid username and password')
+                </script>
+            {%endif%}
             <div class="info">
                 <form action="{%url 'login'%}" method="post">
                 {%csrf_token%}
-                    <input class='input' type="text" placeholder="Email">
+                    <input class='input' type="text" placeholder="username" name='username' >
                     <br>
-                    <input class='input' type="text" placeholder="Password">
+                    <input class='input' type="text" placeholder="password" name='password'>
                     <br>
                     <button name='login' type="submit">Log In</button>
                 </form>

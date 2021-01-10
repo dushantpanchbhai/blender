@@ -8,4 +8,5 @@ urlpatterns = [
     path('models',views.models,name='models'),
     path('tutorial',views.tutorial,name='tutorial'),
     path('login',views.login,name='login'),
+    path('logout',views.logout,name='logout'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

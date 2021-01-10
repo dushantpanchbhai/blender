@@ -12,7 +12,7 @@ def home(request):
 
 def login(request):
 	if request.method=='POST':
-		user = auth.authenticate(email=request.POST['Email'],password = request.POST['Password'])
+		user = auth.authenticate(username =request.POST['username'] , password = request.POST['password'])
 		if user is not None:
 			auth.login(request,user)
 			return redirect('home')
@@ -21,7 +21,13 @@ def login(request):
 	else:
 		return render(request, 'login.html')
 
-
+def logout(request):
+    print('we are in logout')
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('home')
+    else:
+        return render(request,'Main.html')
 
 def signup(request):
     if request.method == 'POST':
