@@ -1,42 +1,30 @@
-<!DOCTYPE html>
-<head>
-    <title>
-        Artistly HOME
-    </title>
-    <link rel="stylesheet" href="./home.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-
-</head>
-<body>
-<div class="container">
-    <nav class="navbar">
-        <ul>
-            <li class='logo'><img src='https://image.shutterstock.com/image-vector/letter-logo-design-templatetechnology-abstract-260nw-369127361.jpg'/></li>
-            <li id="artistly">Artistly</li>
-            <li id='home'>Home</li>
-            <li>About</li>
-            <li>Models</li>
-            <li class='signup-btn'><span>Login/singup</span></li>
-        </ul>
-    </nav>
+{%extends 'base.html' %}
+{% load static %}
+{%block content%}
+    <link rel="stylesheet" href="./static/css/signup.css" type="text/css">
     <div class='main'>
-        <div class= 'upper'>
-            <h1>Artistly</h1>
-            <br>
-            <p>
-                hello, this is dushant panchbhai. i am a 3D artist and also a web developer.<br>this is my 
-                website where you can find my model files.<br>my videos and my blog. thankyou for 
-                visiting my webiste.<br>Hope to see you again.
-            </p>
+        <div class="signup">
+            <div class="title">
+                <h2>Sign Up</h2>
+            </div>
+            {%  if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div> 
+            {% endif %}
+            <div class="info">
+                <form action="{%url 'signup'%}" method="post">
+                {% csrf_token %}
+                    <input class='input' type="text" placeholder="Name" name='username' required>
+                    <br>
+                    <input class='input' type="text" placeholder="Email" name='email' required>
+                    <br>
+                    <input class='input' type="text" placeholder="password" name='password' required>
+                    <br>
+                    <button name='signup' type="submit">Sign Up</button>
+                </form>
+            </div>
+            <h3 class='already'>Already have an account?<a href="{%url 'login'%}">LogIn</a></h3>
         </div>
-        <div class='get-start'>
-            <h3>Get start by Loging In</h3>
-            <span class="icon">
-                <i class="fas fa-angle-double-right"></i>
-            </span>
-        </div>
-        
     </div>
-</div>
-</body>
-</html>
+{%endblock %}

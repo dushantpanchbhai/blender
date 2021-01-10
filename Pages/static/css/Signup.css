@@ -14,7 +14,7 @@
 
 .main
 {
-    background-image:url('/Pages/static/images/signup_1.jfif');
+    background-image:url('../images/signup_1.jfif');
     width: 100% !important;
     height: 700px;
     background-size: cover;
@@ -92,7 +92,17 @@
 }
 .social
 {
-
+    word-spacing: 10px;
+    padding-top:20px;
+    text-decoration: none;
+}
+.social a
+{
+    text-decoration: none;
+}
+.social img
+{
+    width: 30px;
 }
 
 .already
@@ -100,6 +110,6 @@
     padding: 50px;
     font-family: sans-serif;
     color: whitesmoke;
-    font-size:20px;
+    font-size:15px;
     text-align: center;
 }

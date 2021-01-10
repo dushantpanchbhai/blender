@@ -1,0 +1,35 @@
+{%extends 'base.html' %}
+{% load static %}
+{%block content%}
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <div class='main'>
+        <div class="login">
+            <div class="title">
+                <h2>Log In</h2>
+            </div>
+            <div class="info">
+                <form action="{%url 'login'%}" method="post">
+                {%csrf_token%}
+                    <input class='input' type="text" placeholder="Email">
+                    <br>
+                    <input class='input' type="text" placeholder="Password">
+                    <br>
+                    <button name='login' type="submit">Log In</button>
+                </form>
+                <span>or login with</span>
+                <div class="social">
+                    <a href="#">
+                        <img src="{% static 'images/facebook.png' %}" >
+                    </a>
+                    <a href="#">
+                        <img src="{% static 'images/google.png' %}" >
+                    </a>
+                    <a href="#">
+                        <img src="{% static 'images/github.png' %}" >
+                    </a>
+                </div>
+                <h3 class='already'>Don't have accout? <a href="{%url 'signup'%}"> SignUp</a></h3>
+            </div>
+        </div>
+    </div>
+{%endblock %}

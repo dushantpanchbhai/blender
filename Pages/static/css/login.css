@@ -14,22 +14,23 @@
 
 .main
 {
-    background-image:url('/Pages/static/images/signup_1.jfif');
+    background-image:url('../images/signup_1.jfif');
     width: 100% !important;
-    height: 700px;
+    height: 650px;
     background-size: cover;
     background-position: center center;
+    text-align: center;
 }
 
-.signup
+.login
 {
-    width: 35%;
+    width: 30%;
     background-color: rgba(36, 34, 34, 0.794);
     border: none;
     border-radius: 10px;
     position: relative;
-    left: 31.5%;
-    top: 50px;
+    left: 34.2%;
+    top: 80px;
     text-align: center;
 }
 
@@ -52,7 +53,7 @@
 
 .info form
 {
-    
+    text-align: center;
 }
 
 .info form input
@@ -67,7 +68,7 @@
 
 .info form button
 {
-    margin-top:20px;
+    margin-top:10px;
     margin-bottom:20px;
     border: none;
     border-radius:20px;
@@ -84,7 +85,7 @@
     transition: .2s ease-in-out;
 }
 
-.signup span
+.login span
 {
     margin-top:20px;
     text-align: center;
@@ -92,7 +93,17 @@
 }
 .social
 {
-
+    word-spacing: 10px;
+    padding-top:20px;
+    text-decoration: none;
+}
+.social a
+{
+    text-decoration: none;
+}
+.social img
+{
+    width: 30px;
 }
 
 .already
@@ -100,6 +111,6 @@
     padding: 50px;
     font-family: sans-serif;
     color: whitesmoke;
-    font-size:20px;
+    font-size:15px;
     text-align: center;
 }

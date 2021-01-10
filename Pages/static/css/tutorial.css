@@ -1,0 +1,70 @@
+.navbar-nav
+{
+    margin-left: auto;
+}
+
+#buttonright
+{
+    background-color: #2792e9;
+    font-family: sans-serif;
+    border-radius: 3px;
+    border: none;
+    color: white;
+}
+
+.main
+{
+    width: 100%;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    
+}
+
+.upper
+{
+    padding: 30px;
+}
+
+.upper h1
+{
+    color: rgba(224, 220, 220, 0.904);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.content
+{
+    text-align: center;
+}
+
+.video iframe
+{
+    border-radius: 20px;
+}
+
+.video:hover iframe
+{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.title
+{
+    padding-top: 5px;
+    font-size: 30px;
+    color: whitesmoke;
+    padding-bottom: 50px;
+}
+
+.footer
+{
+    text-align: center;
+    padding-bottom: 10px;
+    color: whitesmoke;
+}
+
+.footer p
+{
+    margin: 0px 0px 0px;
+}
+

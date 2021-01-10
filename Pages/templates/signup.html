@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<div class='main'>
+    <link rel='stylesheet' href='{% static "css/signup.css" %}'>
+    <div class="signup">
+        <div class="title">
+            <h2>Sign Up</h2>
+        </div>
+        <div class="info">
+            <form action="" method="post">
+            
+                <input class='input' type="text" placeholder="Name" name='username' required>
+                <br>
+                <input class='input' type="text" placeholder="Email" name='email' required>
+                <br>
+                <input class='input' type="text" placeholder="password" name='password' required>
+                <br>
+                <button name='signup' type="submit">Sign Up</button>
+            </form>
+        </div>
+        <span>or signup with</span>
+            <div class="social">
+                <a href="#">
+                    <img src="{% static 'images/facebook.png' %}" >
+                </a>
+                <a href="#">
+                    <img src="{% static 'images/google.png' %}" >
+                </a>
+                <a href="#">
+                    <img src="{% static 'images/github.png' %}" >
+                </a>
+            </div>
+        <h3 class='already'>Already have an account? <a href="{%url 'login'%}"> LogIn</a></h3>
+    </div>
+</div>
+
+{% endblock %}
