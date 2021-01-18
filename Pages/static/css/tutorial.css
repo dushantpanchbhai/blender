@@ -16,9 +16,10 @@
 {
     width: 100%;
     background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-    
-}
+    /*background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    background-image: linear-gradient( 109.6deg,  rgba(5,84,94,1) 16%, #bbb 91.1% );
+    */background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    }
 
 .upper
 {
@@ -66,5 +67,26 @@
 .footer p
 {
     margin: 0px 0px 0px;
+}
+
+
+@media screen and (max-width: 768px) 
+{
+    .content {
+        margin: 20px;
+    }
+    .video iframe{
+        width: 100%;
+        height: 200px;
+    }
+    .title
+    {
+        font-size: 20px;
+    }
+
+    .footer p
+    {
+        font-size: 10px;
+    }
 }
 

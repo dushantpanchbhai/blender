@@ -114,3 +114,17 @@
     font-size:15px;
     text-align: center;
 }
+
+@media screen and (max-width: 768px) 
+{
+   .login{
+    width: 70%;
+    left: 14.5%;
+    top: 40px;
+   }
+   
+   .info form input {
+       width: 80%;
+       border-radius:30px;
+   }
+}

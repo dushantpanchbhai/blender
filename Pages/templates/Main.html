@@ -39,13 +39,23 @@
   <div class="models">
   {%for j in models.all %}
     <figure>
-      <a href="{{j.link}}">
+    {%if request.user.is_authenticated%}
+      <a href="{{j.link.url}} " download>
         <img src="{{j.img.url}}" class='image' alt="kfsdajoasdn">
       </a>
-      <a href="{{j.link}}" class='download'><span>Download</span></a>
+      <a href="{{j.link.url}}" download class='download'><span>Download</span></a>
       <p>
         {{j.title}}
       </p>
+    {%else%}
+    <a href="{%url 'login'%}">
+        <img src="{{j.img.url}}" class='image' alt="kfsdajoasdn">
+      </a>
+      <a href="{%url 'login'%}" class='download'><span>Download</span></a>
+      <p>
+        {{j.title}}
+      </p>
+    {%endif%}
     </figure>
   {%endfor%}
   </div>
@@ -62,16 +72,19 @@
       Hey there, This is Dushant Panchbhai. I am a 3D artist and a web developer. Currently I am pusuing B.Tech from VJTI Mumbai. checkout my git account to get to know various projects i have done till now. 
     </p>
     <div class="social">
-      <a href='#'>
+    <p>
+    Follow Me on:
+    </p>
+      <a href='http://www.facebook.com/' >
         <img src="{% static 'images/facebook.png' %}">
       </a>
-      <a href='#'>
+      <a href=''>
         <img src="{% static 'images/instagram.png' %}">
       </a>
-      <a href='#'>
+      <a href=''>
         <img src="{% static 'images/github.png' %}">
       </a>
-      <a href='#'>
+      <a href='' >
         <img src="{% static 'images/twitter.png' %}">
       </a>
     </div>

@@ -3,76 +3,45 @@
 
 {%block content%}
 {#  <link rel="stylesheet" href="../static/css/models.css"> #}
-<link rel="stylesheet" href="{%static 'css/models.css'%}">
+<link rel="stylesheet" href="{%static 'css/Models.css'%}">
 <div class='main'>
     <div class='heading'>
         <h1>Models<h1>
     </div>
     <div class='models-content'>
-        <div class='models'>
-            <img src="../static/images/model1.jpg" />
-              <div class="para">
-                <p>this is the destop model i have made in blender. hope you like it. subscribe and download it for free. dfjniasd bnabdhjkjnjfvnjk ndakdvjnadjvnjkadnvka jdnjdkankavn</p>
-              </div>
-            <br>
-              <div class="button-class">
-                <a>
-                  <button name='signup' type="submit" >Download</button>
-                </a>
-              </div>
-        </div>
-
-        <div class='models'>
-          <img src="../static/images/model1.jpg" />
-            <div class="para">
-              <p>this is the destop model i have made in blender. hope you like it. subscribe and download it for free. dfjniasd bnabdhjkjnjfvnjk ndakdvjnadjvnjkadnvka jdnjdkankavn</p>
-            </div>
-          <br>
-            <div class="button-class">
-              <a>
-                <button name='signup' type="submit" >Download</button>
-              </a>
-            </div>
-      </div>
-
-      <div class='models'>
-        <img src="../static/images/model1.jpg" />
-          <div class="para">
-            <p>this is the destop model i have made in blender. hope you like it. subscribe and download it for free. dfjniasd bnabdhjkjnjfvnjk ndakdvjnadjvnjkadnvka jdnjdkankavn</p>
-          </div>
-        <br>
-          <div class="button-class">
-            <a>
-              <button name='signup' type="submit" >Download</button>
-            </a>
-          </div>
-    </div>
-
-    <div class='models'>
-      <img src="../static/images/model1.jpg" />
-        <div class="para">
-          <p>this is the destop model i have made in blender. hope you like it. subscribe and download it for free. dfjniasd bnabdhjkjnjfvnjk ndakdvjnadjvnjkadnvka jdnjdkankavn</p>
-        </div>
-      <br>
-        <div class="button-class">
-          <a>
-            <button name='signup' type="submit" >Download</button>
+      {% for j in models.all %}
+        {% if request.user.is_authenticated %}
+          <div class='models'>
+          <a href="{{j.link.url}}" download>
+              <img src="{{j.img.url}}" />
           </a>
-        </div>
-  </div>
-
-  <div class='models'>
-    <img src="../static/images/model1.jpg" />
-      <div class="para">
-        <p>this is the destop model i have made in blender. hope you like it. subscribe and download it for free. dfjniasd bnabdhjkjnjfvnjk ndakdvjnadjvnjkadnvka jdnjdkankavn</p>
-      </div>
-    <br>
-      <div class="button-class">
-        <a>
-          <button name='signup' type="submit" >Download</button>
-        </a>
-      </div>
-</div>
+                <div class="para">
+                  <p>{{j.title}}</p>
+                </div>
+              <br>
+                <div class="button-class">
+                  <a href="{{j.link.url}}" download>
+                    <button name='signup' type="submit" >Download</button>
+                  </a>
+                </div>
+            </div>
+          {%else%}
+            <div class='models'>
+          <a href="{%url 'login'%}">
+              <img src="{{j.img.url}}" />
+          </a>
+                <div class="para">
+                  <p>{{j.title}}</p>
+                </div>
+              <br>
+                <div class="button-class">
+                  <a href="{%url 'login'%}">
+                    <button name='signup' type="submit" >Download</button>
+                  </a>
+                </div>
+            </div>
+          {%endif%}
+      {%endfor %}
     </div>
 </div>
 {% endblock %}

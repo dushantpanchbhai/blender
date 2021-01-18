@@ -113,3 +113,34 @@
     font-size:15px;
     text-align: center;
 }
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+.main
+{
+    text-align:center;
+}
+
+.signup
+{
+    width: 70%;
+    left: 14.5%;
+}
+
+.info form input
+{
+    width: 80%;
+}
+
+.info form button
+{
+    margin-top: 1px;
+}
+
+.already
+{
+    padding: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
+
+}

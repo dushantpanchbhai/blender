@@ -9,7 +9,7 @@ class Account(models.Model):
 
 class Models(models.Model):
     img=models.ImageField(upload_to='images',blank=True,null=True)
-    link=models.URLField(max_length=50)
+    link=models.FileField(upload_to='files',blank=True,null=True)
     title=models.CharField(max_length=200)
 
 class Tutorial(models.Model):
