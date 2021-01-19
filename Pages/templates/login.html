@@ -24,13 +24,13 @@
                 </form>
                 <span>or login with</span>
                 <div class="social">
-                    <a href="#">
+                    <a href="{% provider_login_url "linkedin_oauth2" %}">
                         <img src="{% static 'images/facebook.png' %}" >
                     </a>
                     <a href="{% provider_login_url "google" %}">
                         <img src="{% static 'images/google.png' %}" >
                     </a>
-                    <a href="#">
+                    <a href="{% provider_login_url "github" %}">
                         <img src="{% static 'images/github.png' %}" >
                     </a>
                 </div>

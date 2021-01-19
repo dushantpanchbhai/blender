@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.linkedin_oauth2',
     #
     'django.contrib.admin',
     'django.contrib.auth',
@@ -150,6 +152,16 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '4dcfd575af3b17066907',
+            'secret': 'c9dc8e4d4c50d6056f48b4d73969d5d20a088b57',
+            'key': ''
+        }
+    },
     'google': {
         # For each OAuth based provider, either add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
@@ -159,6 +171,18 @@ SOCIALACCOUNT_PROVIDERS = {
             'secret': 'iwvmhKhgIpFHsjtF_TrRPRXI',
             'key': ''
         }
+    },
+    'linkedin_oauth2': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '8613lb2b3g71ux',
+            'secret': 'zp5pRiyvHY18uDyo',
+            'key': ''
+        }
     }
 }
+
+
 
