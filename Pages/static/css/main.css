@@ -1,16 +1,6 @@
-    .navbar-nav
+.navbar-nav
 {
     margin-left: auto;
-}
-
-#buttonright
-{
-    background-color: #2792e9;
-    font-family: sans-serif;
-    border-radius: 3px;
-    border: none;
-    color: white;
-    margin-top:0px;
 }
 
 a{
@@ -311,7 +301,11 @@ a{
     color: rgba(255, 255, 255, 0.835);
 }
 
-
+.alert
+{
+    color: whitesmoke;
+    font-family: sans-serif;
+}
 @media screen and (max-width:768px)
 {
     #menu {
@@ -452,5 +446,10 @@ a{
     .social a img
     {
         width: 30px;
+    }
+
+    .alert
+    {
+        font-size: 10px;
     }
 }

@@ -1,32 +1,33 @@
 {%extends 'base.html'%}
+{% block nav_item_home %}active{% endblock nav_item_home %}
 {%load static%}
- 
-
 {%block content%}
-<link rel="stylesheet" href="{% static 'css/main.css'%}">
+<link rel="stylesheet" href="{% static 'css/Main.css'%}">
 
 <div class="main" id='menu' data-rellax-speed = '-4'>
     <!--
     <img id='background' src="./pexels-daniel-putzer-633409.jpg" alt="">
     -->
-    <div class='front-font' id='line'>
+    <div class='front-font' id='line' data-aos="fade-right" >
     </div>
-    <div class="front-font">
+    <div class="front-font" data-aos="fade-right"data-aos-offset="100">
         <h1>Artistly</h1>
     </div>
-    <div class="signup-button">
+    <div class="signup-button" data-aos="fade-left">
+    <a href="{% url 'login' %}">
       <h2>Get Start</h2>
+    </a>
     </div>
 </div>
 
 <div class="second">
-  <div class="video-heading">
+  <div class="video-heading" data-aos="fade-right" data-aos-offset="100">
     <h1><a href="{%url 'tutorial'%}">Videos</a></h1>
   </div>
   <div class="videos-container">
-    <div class="video">
-    {%for i in video.all%}
-      <iframe width="560" height="315" src="{{i.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video" >
+    {%for i in video.all %}
+      <iframe width="560" height="315" src="{{i.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-aos="zoom-in"></iframe>
     {%endfor%}
     </div>
   </div>
@@ -34,25 +35,29 @@
 
 <div class="third">
   <div class="models-heading">
-  <h1><a href="{%url 'models'%}">Models</a></h1>
+  <h1 data-aos="fade-right"><a href="{%url 'models'%}">Models</a></h1>
   </div>
-  <div class="models">
+  <div class="models" >
+  {%if request.user.is_authenticated %}
+  {%else%}
+  <p class='alert' data-aos="fade-right">Make sure you are Logged in befor downloading models. All models can be downloaded for free and will be availabe on Models page.</p>
+  {%endif%}
   {%for j in models.all %}
     <figure>
     {%if request.user.is_authenticated%}
       <a href="{{j.link.url}} " download>
-        <img src="{{j.img.url}}" class='image' alt="kfsdajoasdn">
+        <img src="{{j.img.url}}" class='image' alt="kfsdajoasdn" data-aos="zoom-in">
       </a>
-      <a href="{{j.link.url}}" download class='download'><span>Download</span></a>
-      <p>
+      <a href="{{j.link.url}}" download class='download' data-aos="zoom-in"><span>Download</span></a>
+      <p data-aos="fade-up">
         {{j.title}}
       </p>
     {%else%}
     <a href="{%url 'login'%}">
-        <img src="{{j.img.url}}" class='image' alt="kfsdajoasdn">
+        <img src="{{j.img.url}}" class='image' alt="kfsdajoasdn" data-aos="zoom-in">
       </a>
-      <a href="{%url 'login'%}" class='download'><span>Download</span></a>
-      <p>
+      <a href="{%url 'login'%}" class='download' data-aos="zoom-in" ><span>Download</span></a>
+      <p data-aos="fade-up">
         {{j.title}}
       </p>
     {%endif%}
@@ -62,36 +67,36 @@
 </div>
 
 <div class="fourth">
-  <div class="about-me">
+  <div class="about-me" data-aos="fade-right">
     <h1>About Me</h1>
   </div>
   <div class="about-content">
-    <img src= "{% static 'images/photo.png'%}">
-    <h2>Dushant Panchbhai</h2>
-    <p>
-      Hey there, This is Dushant Panchbhai. I am a 3D artist and a web developer. Currently I am pusuing B.Tech from VJTI Mumbai. checkout my git account to get to know various projects i have done till now. 
+    <img src= "{% static 'images/photo.png'%}" data-aos="zoom-in">
+    <h2 data-aos="fade-up">Dushant Panchbhai</h2>
+    <p data-aos="fade-up">
+      Hey there, This is Dushant Panchbhai. I am a 3D artist and a web developer. Currently I am pursuing B.Tech from VJTI Mumbai. checkout my git account to get to know various projects i have done till now. 
     </p>
     <div class="social">
-    <p>
+    <p data-aos="zoom-in">
     Follow Me on:
     </p>
-      <a href='http://www.facebook.com/' >
-        <img src="{% static 'images/facebook.png' %}">
+      <a href='https://www.facebook.com/dushant.panchbhai.9/' target="_blank">
+        <img src="{% static 'images/facebook.png' %}" data-aos="zoom-in" data-aos-delay="50">
       </a>
-      <a href=''>
-        <img src="{% static 'images/instagram.png' %}">
+      <a href='https://www.instagram.com/dushant.73/' target="_blank">
+        <img src="{% static 'images/instagram.png' %}" data-aos="zoom-in" data-aos-delay="150">
       </a>
-      <a href=''>
-        <img src="{% static 'images/github.png' %}">
+      <a href='https://github.com/dushantpanchbhai' target="_blank">
+        <img src="{% static 'images/github.png' %}" data-aos="zoom-in" data-aos-delay="300">
       </a>
-      <a href='' >
-        <img src="{% static 'images/twitter.png' %}">
+      <a href='https://www.linkedin.com/in/dushant-panchbhai-b799081b7/' target="_blank" >
+        <img src="{% static 'images/twitter.png' %}" data-aos="zoom-in" data-aos-delay="400">
       </a>
     </div>
   </div>
   <div class="footer">
-    <p>
-      &#169; Dushant Panchbhai 2021
+    <p data-aos="zoom-in" data-aos-offset='0'>
+      &#169; Artistly 2021
     </p>
   </div>
 </div>

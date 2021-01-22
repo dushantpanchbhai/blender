@@ -8,11 +8,13 @@ class Account(models.Model):
     password=models.CharField(max_length=50)
 
 class Models(models.Model):
+    index=models.IntegerField(blank=True, null=True)
     img=models.ImageField(upload_to='images',blank=True,null=True)
     link=models.FileField(upload_to='files',blank=True,null=True)
     title=models.CharField(max_length=200)
 
 class Tutorial(models.Model):
+    index=models.IntegerField(blank=True, null=True)
     title=models.CharField(max_length=100)
     url=models.URLField(max_length=250)
     

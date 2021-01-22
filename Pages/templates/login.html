@@ -2,11 +2,11 @@
 {% load static %}
 {% load socialaccount %}
 {%block content%}
-    <link rel="stylesheet" href="{% static 'css/Login.css'%}">
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
     <div class='main'>
-        <div class="login">
+        <div class="login" data-aos='zoom-in'>
             <div class="title">
-                <h2>Log In</h2>
+                <h2 data-aos='fade-right' data-aos-delay='200'>Log In</h2>
             </div>
             {%if error%}
                 <script>
@@ -16,26 +16,31 @@
             <div class="info">
                 <form action="{%url 'login'%}" method="post">
                 {%csrf_token%}
-                    <input class='input' type="text" placeholder="username" name='username' >
+                    <input class='input' type="text" placeholder="username" name='username' data-aos='fade-right' data-aos-delay='400' >
                     <br>
-                    <input class='input' type="text" placeholder="password" name='password'>
+                    <input class='input' type="text" placeholder="password" name='password' data-aos='fade-right' data-aos-delay='500'>
                     <br>
-                    <button name='login' type="submit">Log In</button>
+                    <button name='login' type="submit" data-aos='fade-up' data-aos-delay='500'>Log In</button>
                 </form>
                 <span>or login with</span>
                 <div class="social">
                     <a href="{% provider_login_url "linkedin_oauth2" %}">
-                        <img src="{% static 'images/facebook.png' %}" >
+                        <img src="{% static 'images/facebook.png' %}" data-aos='zoom-in' data-aos-delay='600' >
                     </a>
                     <a href="{% provider_login_url "google" %}">
-                        <img src="{% static 'images/google.png' %}" >
+                        <img src="{% static 'images/google.png' %}" data-aos='zoom-in' data-aos-delay='600'>
                     </a>
                     <a href="{% provider_login_url "github" %}">
-                        <img src="{% static 'images/github.png' %}" >
+                        <img src="{% static 'images/github.png' %}" data-aos='zoom-in' data-aos-delay='600'>
                     </a>
                 </div>
-                <h3 class='already'>Don't have accout? <a href="{%url 'signup'%}"> SignUp</a></h3>
+                <h3 class='already' data-aos='fade-up' data-aos-delay='600'>Don't have accout? <a href="{%url 'signup'%}"> SignUp</a></h3>
             </div>
+        </div>
+        <div class="footer">
+        <p>
+        &#169; Dushant Panchbhai 2021
+        </p>
         </div>
     </div>
 {%endblock %}

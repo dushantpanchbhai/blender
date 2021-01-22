@@ -1,38 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load socialaccount %}
 {%block content%}
-<div class='main'>
-    <link rel='stylesheet' href='{% static "css/Signup.css" %}'>
-    <div class="signup">
+<link rel='stylesheet' href='{% static "css/signup.css" %}'>
+<div class='main' >
+    <div class="signup" data-aos='zoom-in'>
         <div class="title">
-            <h2>Sign Up</h2>
+            <h2 data-aos='fade-right' data-aos-delay='200'>Sign Up</h2>
         </div>
         <div class="info">
             <form action="{% url 'signup' %}" method="post">
                 {%csrf_token%}
-                <input class='input' type="text" placeholder="Name" name='username' required>
+                <input class='input' type="text" placeholder="Name" name='username' required data-aos='fade-right' data-aos-delay='400'>
                 <br>
-                <input class='input' type="text" placeholder="Email" name='email' required>
+                <input class='input' type="text" placeholder="Email" name='email' required data-aos='fade-right' data-aos-delay='500'>
                 <br>
-                <input class='input' type="text" placeholder="password" name='password' required>
+                <input class='input' type="text" placeholder="password" name='password' required data-aos='fade-right' data-aos-delay='600'>
                 <br>
-                <button name='signup' type="submit">Sign Up</button>
+                <button name='signup' type="submit" data-aos='fade-up' data-aos-delay='500'>Sign Up</button>
             </form>
         </div>
-        <span>or signup with</span>
+        <span data-aos='zoom-in'>or signup with</span>
             <div class="social">
-                <a href="#">
-                    <img src="{% static 'images/facebook.png' %}" >
+                <a href="{% provider_login_url "linkedin_oauth2" %}">
+                    <img src="{% static 'images/facebook.png' %}" data-aos='zoom-in' data-aos-delay='600'>
                 </a>
-                <a href="#">
-                    <img src="{% static 'images/google.png' %}" >
+                <a href="{% provider_login_url "google" %}">
+                    <img src="{% static 'images/google.png' %}" data-aos='zoom-in' data-aos-delay='600'>
                 </a>
-                <a href="#">
-                    <img src="{% static 'images/github.png' %}" >
+                <a href="{% provider_login_url "github" %}">
+                    <img src="{% static 'images/github.png' %}" data-aos='zoom-in' data-aos-delay='600' >
                 </a>
             </div>
-        <h3 class='already'>Already have an account? <a href="{%url 'login'%}"> LogIn</a></h3>
+        <h3 class='already' data-aos='fade-up' data-aos-delay='600'>Already have an account? <a href="{%url 'login'%}"> LogIn</a></h3>
+    </div>
+    <div class="footer" >
+    <p>
+      &#169; Artistly 2021
+    </p>
     </div>
 </div>
-
 {% endblock %}

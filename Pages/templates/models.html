@@ -1,42 +1,42 @@
 {%extends 'base.html'%}
-{%load static%}
-
+{% block nav_item_models %}active{% endblock nav_item_models %}
+{%load static%} 
 {%block content%}
 {#  <link rel="stylesheet" href="../static/css/models.css"> #}
 <link rel="stylesheet" href="{%static 'css/Models.css'%}">
 <div class='main'>
-    <div class='heading'>
+    <div class='heading' data-aos='fade-right'>
         <h1>Models<h1>
     </div>
-    <div class='models-content'>
+    <div class='models-content'  >
       {% for j in models.all %}
         {% if request.user.is_authenticated %}
           <div class='models'>
           <a href="{{j.link.url}}" download>
-              <img src="{{j.img.url}}" />
+              <img src="{{j.img.url}}" data-aos='zoom-in' data-aos-delay='300'>
           </a>
                 <div class="para">
-                  <p>{{j.title}}</p>
+                  <p data-aos='fade-left'>{{j.title}}</p>
                 </div>
               <br>
                 <div class="button-class">
                   <a href="{{j.link.url}}" download>
-                    <button name='signup' type="submit" >Download</button>
+                    <button name='signup' type="submit" data-aos='fade-up'>Download</button>
                   </a>
                 </div>
             </div>
           {%else%}
             <div class='models'>
           <a href="{%url 'login'%}">
-              <img src="{{j.img.url}}" />
+              <img src="{{j.img.url}}" data-aos='zoom-in' data-aos-delay='300' >
           </a>
                 <div class="para">
-                  <p>{{j.title}}</p>
+                  <p data-aos='fade-left'>{{j.title}}</p>
                 </div>
               <br>
                 <div class="button-class">
                   <a href="{%url 'login'%}">
-                    <button name='signup' type="submit" >Download</button>
+                    <button name='signup' type="submit" data-aos='fade-up'>Download</button>
                   </a>
                 </div>
             </div>

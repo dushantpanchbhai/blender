@@ -12,8 +12,8 @@ from django.contrib import auth
 q="home"
 
 def home(request):
-    video = Tutorial.objects
-    models= Models.objects
+    video = Tutorial.objects.all()[:6]
+    models= Models.objects.all()[:3]
     return render(request,'Main.html',{'video':video ,'models':models})
 
 def login(request):

@@ -16,7 +16,7 @@
 {
     background-image:url('../images/signup_1.jfif');
     width: 100% !important;
-    height: 650px;
+    height: 700px;
     background-size: cover;
     background-position: center center;
     text-align: center;
@@ -115,8 +115,20 @@
     text-align: center;
 }
 
+.footer
+{
+    text-align: center;
+    position: relative;
+    bottom: -150px;
+    color: rgba(255, 255, 255, 0.835);
+}
+
 @media screen and (max-width: 768px) 
 {
+    .main
+    {
+        height: 600px;
+    }
    .login{
     width: 70%;
     left: 14.5%;
@@ -127,4 +139,13 @@
        width: 80%;
        border-radius:30px;
    }
+   .footer
+    {
+        text-align: center;
+        position: relative;
+        bottom: -40px;
+        color: rgba(255, 255, 255, 0.835);
+    }
+
 }
+

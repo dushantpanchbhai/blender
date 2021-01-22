@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% block nav_item_tutorial %}active{% endblock nav_item_tutorial %}
 {%load static%}
 {%block content %}
 <link rel="stylesheet" href="{% static 'css/Tutorial.css' %}">
 <div class="main">
-    <div class="upper">
+    <div class="upper" data-aos='fade-right'>
         <h1>Tutorials</h1>
     </div>
     <div class="content">
@@ -11,17 +12,17 @@
         {# "https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" #}  
         {%for i in video.all%}
             <div class="video">
-                <iframe width="560" height="315" src="{{i.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="{{i.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-aos='zoom-in'></iframe>
             </div>
-            <div class="title">
+            <div class="title" data-aos='fade-up' data-aos-offset='-10'>
                     {{i.title}}
             </div>
         {%endfor%}
         </div>
     </div>
-    <div class="footer">
+    <div class="footer" >
         <p>
-            &#169; Dushant Panchbhai 2021
+            &#169; Artistly 2021
         </p>
     </div>
 </div>

@@ -114,6 +114,15 @@
     text-align: center;
 }
 
+
+.footer
+{
+    text-align: center;
+    position: relative;
+    bottom: -80px;
+    color: rgba(255, 255, 255, 0.835);
+}
+
 /* Media Queries: Tabled Portrait */
 @media screen and (max-width: 768px) {
 .main
@@ -143,4 +152,5 @@
     padding-left: 35px;
     padding-right: 35px;
 
+}
 }
