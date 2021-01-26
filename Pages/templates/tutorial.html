@@ -2,14 +2,13 @@
 {% block nav_item_tutorial %}active{% endblock nav_item_tutorial %}
 {%load static%}
 {%block content %}
-<link rel="stylesheet" href="{% static 'css/Tutorial.css' %}">
+<link rel="stylesheet" href="{% static 'css/tutorial.css' %}">
 <div class="main">
     <div class="upper" data-aos='fade-right'>
         <h1>Tutorials</h1>
     </div>
     <div class="content">
         <div class="videos">
-        {# "https://www.youtube.com/embed/-Hn41mp3qH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" #}  
         {%for i in video.all%}
             <div class="video">
                 <iframe width="560" height="315" src="{{i.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-aos='zoom-in'></iframe>
