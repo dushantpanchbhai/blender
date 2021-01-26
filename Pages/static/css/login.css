@@ -123,18 +123,18 @@
     color: rgba(255, 255, 255, 0.835);
 }
 
-@media screen and (max-width: 768px) 
+@media screen and (max-width: 768px)
 {
     .main
     {
-        height: 660px;
+        height: 670px;
     }
    .login{
     width: 70%;
     left: 14.5%;
     top: 40px;
    }
-   
+
    .info form input {
        width: 80%;
        border-radius:30px;
