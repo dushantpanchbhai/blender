@@ -12,7 +12,7 @@ from django.contrib import auth
 q="home"
 
 def home(request):
-    video = Tutorial.objects.all()[:6]
+    video = Tutorial.objects.all()[:4]
     models= Models.objects.all()[:3]
     return render(request,'Main.html',{'video':video ,'models':models})
 
@@ -23,8 +23,11 @@ def login(request):
         if user is not None:
             auth.login(request,user)
             if q!=None:
-                #print('going to previous page')
-                return redirect(q)
+                print('going to previous page')
+                if q=='http://127.0.0.1:8000/signup' or q=='http://127.0.0.1:8000/login':
+                    return redirect('home')
+                else:
+                    return redirect(q)
             else:
                 #print('not going to previous page')
                 return redirect('home')
@@ -41,7 +44,7 @@ def logout(request):
     else:
         return render(request,'Main.html')
 
-def signup(request):
+def signup(request, backend='django.contrib.auth.backends.ModelBackend'):
     global q
     if request.method == 'POST':
         try:
@@ -51,7 +54,10 @@ def signup(request):
             user = User.objects.create_user(request.POST['username'],password=request.POST['password'], email=request.POST['email'])
             auth.login(request,user)
             if q!=None:
-                return redirect(q)
+                if q=='http://127.0.0.1:8000/signup' or q=='http://127.0.0.1:8000/login':
+                    return redirect('home')
+                else:
+                    return redirect(q)
             else:
                 return redirect('home')
     else:

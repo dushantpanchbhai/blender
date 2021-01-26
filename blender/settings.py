@@ -147,7 +147,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+    #'allauth.account.auth_backends.AuthenticationBackend',
 
 ]
 
@@ -177,8 +177,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
         'APP': {
-            'client_id': '8613lb2b3g71ux',
-            'secret': 'zp5pRiyvHY18uDyo',
+            'client_id': '8697il5pndf2gk',
+            'secret': 'ujTUoVfspWeGRKIP',
             'key': ''
         }
     }

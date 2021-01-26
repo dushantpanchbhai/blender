@@ -2,6 +2,9 @@
 {
     margin-left: auto;
 }
+.title{
+    color: whitesmoke;
+}
 
 a{
     text-decoration: none;
@@ -49,7 +52,7 @@ a{
     position: absolute;
     right: 120px;
     top: 300px;
-    border: 1px solid;
+    border: 2px solid;
     border-color:	#FFFFF0;
     border-radius: 50px;
 }
@@ -69,7 +72,9 @@ a{
 
 .signup-button :hover
 {
-    color: rgb(236, 175, 5);
+    font-size: 19px;
+    font-weight: bold;
+    color: rgb(255, 194, 28);
 }
 
 
@@ -176,22 +181,25 @@ a{
 
 .models figure a.download
 {
-    background: linear-gradient(#38f376, #91e5b8);
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     display: inline;
     color: white;
     position: relative;
     right: -20%;
     font-family: sans-serif;
     font-size: 25px;
-    border-radius: 10px;
+    border-radius: 30px;
     text-decoration: none;
+    padding: 5px;
 
 }
 
 .models figure a.download span
 {
-   padding: 20px 20px 20px;
-
+    
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .models figure p

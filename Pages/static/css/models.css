@@ -90,6 +90,19 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     
 }
 
+.footer
+{
+    text-align: center;
+    padding-bottom: 10px;
+    color: whitesmoke;
+}
+
+.footer p
+{
+    margin: 0px 0px 0px;
+}
+
+
 @media screen and (max-width: 768px) 
 {
     .models-content
