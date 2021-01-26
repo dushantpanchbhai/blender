@@ -5,9 +5,6 @@
 <link rel="stylesheet" href="{% static 'css/main.css'%}">
 
 <div class="main" id='menu' data-rellax-speed = '-4'>
-    <!--
-    <img id='background' src="./pexels-daniel-putzer-633409.jpg" alt="">
-    -->
     <div class='front-font' id='line' data-aos="fade-right" >
     </div>
     <div class="front-font" data-aos="fade-right"data-aos-offset="100">
@@ -41,7 +38,7 @@
   <div class="models" >
   {%if request.user.is_authenticated %}
   {%else%}
-  <p class='alert' data-aos="fade-right">Make sure you are Logged in befor downloading models. All models can be downloaded for free and will be availabe on Models page.</p>
+  <p class='alert' data-aos="fade-right">Make sure you are Logged in before downloading models. click on download to get redirected to <a href="{% url 'login' %}">login page</a></p>
   {%endif%}
   {%for j in models.all %}
     <figure>

@@ -332,8 +332,8 @@ a{
     .signup-button
     {
         position:relative;
-        left:0px;
-        top: 400px;
+        display: block;
+        left: 0px;    
         margin: 20px;
         margin-left: 50px;
         margin-right: 50px;
@@ -458,6 +458,6 @@ a{
 
     .alert
     {
-        font-size: 10px;
+        font-size: 15px;
     }
 }
