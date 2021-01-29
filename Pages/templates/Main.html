@@ -12,9 +12,15 @@
         <p class='title' data-aos="fade-up" >3D Models, Tutorials and more....</p>
     </div>
     <div class="signup-button" data-aos="fade-left">
+    {%if user.is_authenticated%} 
+      <a href="{% url 'models' %}">
+        <h2>Get Start</h2>
+      </a>
+    {%else%}
     <a href="{% url 'login' %}">
-      <h2>Get Start</h2>
-    </a>
+        <h2>Get Start</h2>
+      </a>
+    {%endif%}
     </div>
 </div>
 
