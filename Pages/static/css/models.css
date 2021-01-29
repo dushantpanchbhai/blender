@@ -92,6 +92,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 
 .footer
 {
+    padding-top: 20px;
     text-align: center;
     padding-bottom: 10px;
     color: whitesmoke;
@@ -100,6 +101,17 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 .footer p
 {
     margin: 0px 0px 0px;
+}
+
+.alert
+{
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+
+.alert a{
+    
+    color: black;
 }
 
 
@@ -133,6 +145,11 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     {
         left: 0px;
         top: 5px;
+    }
+
+    .alert
+    {
+        font-size: 15px;
     }
 }
 

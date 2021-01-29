@@ -8,7 +8,11 @@
     <div class='heading' data-aos='fade-right'>
         <h1>Models<h1>
     </div>
-    <div class='models-content'  >
+    <div class='models-content'>
+    {%if request.user.is_authenticated %}
+    {%else%}
+    <p class='alert' data-aos="fade-right">Make sure you are Logged in before downloading models. click on download to get redirected to <a href="{% url 'login' %}">login page</a></p>
+    {%endif%}
       {% for j in models.all %}
         {% if request.user.is_authenticated %}
           <div class='models'>
@@ -21,7 +25,7 @@
               <br>
                 <div class="button-class">
                   <a href="{{j.link.url}}" download>
-                    <button name='signup' type="submit" data-aos='fade-up'>Download</button>
+                    <button name='signup' type="submit" data-aos='fade-up' data-aos-offset='0'>Download</button>
                   </a>
                 </div>
             </div>
