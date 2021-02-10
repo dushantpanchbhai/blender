@@ -12,7 +12,7 @@ from django.contrib import auth
 q="home"
 
 def home(request):
-    video = Tutorial.objects.all()[:4]
+    video = Tutorial.objects.all()[:6]
     models= Models.objects.all()[:3]
     return render(request,'Main.html',{'video':video ,'models':models})
 
