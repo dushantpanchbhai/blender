@@ -133,7 +133,8 @@ def feedback(request):
             obj.save()
             return redirect('home')
         else:
-            return render(request, 'feedback.html',{'form':form})
+            form = GeeksForm()
+            return render(request,'feedback.html',{'form':form})
     form = GeeksForm()
     return render(request,'feedback.html',{'form':form})
 
