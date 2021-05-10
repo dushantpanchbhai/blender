@@ -12,7 +12,7 @@ q="home"
 def home(request):
     #if loop for adding user to database of analytics if new for email purpose
     if request.user.is_authenticated:
-        print('-'*10,request.user.date_joined)
+        #print('-'*10,request.user.date_joined)
         if not Information.objects.filter(email=request.user.email).exists():
             p = Information(username = request.user.username,email=request.user.email,number=Information.objects.all().count()+1,Firstname=request.user.first_name,Lastname=request.user.last_name,join=request.user.date_joined,last_active=request.user.last_login)
             p.save()
@@ -20,8 +20,8 @@ def home(request):
             p = Information.objects.get(email=request.user.email)
             p.last_active = request.user.last_login
             p.save()
-    video = Tutorial.objects.all()[:6]
-    models= Models.objects.all()[:3]
+    video = Tutorial.objects.all().order_by('-id')[:6]
+    models= Models.objects.all().order_by('-id')[:3]
     return render(request,'Main.html',{'video':video ,'models':models})
 
 def login(request):
