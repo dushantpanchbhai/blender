@@ -104,6 +104,11 @@
 .social img
 {
     width: 30px;
+    transition: 0.1s ease-in-out !important;
+}
+.social img:hover
+{
+    transform: scale(1.2)!important;
 }
 
 .already

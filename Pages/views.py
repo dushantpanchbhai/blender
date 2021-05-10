@@ -95,10 +95,11 @@ def addmodel(request):
         form = ModelsForm(request.POST,request.FILES)
         if form.is_valid():
             data = form.cleaned_data['title']
-            if Models.objects.filter(title=data).exists():
+            if Models.objects.filter(title=data,link=form.cleaned_data['link']).exists():  
                 print('item already exist')
                 return HttpResponse('<h1> item already exist <h1>')
             form.save()
+            form = ModelsForm()
             return render(request,'addmodel.html',{'form':form})
     else:
         form = ModelsForm()
@@ -108,7 +109,12 @@ def addvideo(request):
     if request.method == 'POST':
         form = VideosForm(request.POST)
         if form.is_valid():
+            data = form.cleaned_data['title']
+            if Tutorial.objects.filter(title=data,url=form.cleaned_data['url']).exists():
+                print('item already exist')
+                return HttpResponse('<h1> item already exist <h1>')
             form.save()
+            form = VideosForm()
             return render(request,'addvideo.html',{'form':form})
     else:
         form = VideosForm()

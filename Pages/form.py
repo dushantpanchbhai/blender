@@ -29,16 +29,6 @@ CHOICES = [
         (5, 'excellent')
 ]
 
-
-# class FeedbackForm(ModelForm):
-#     class Meta:
-#         model = Feedback
-#         fields = "__all__"
-#         widgets = {'email':forms.TextInput(attrs={'class':'form-control'}),
-#         'website_rating':forms.Select(attrs={'class':'form-control'}),
-#         'artwork_rating':forms.Select(attrs={'class':'form-control'}),
-#         'youtube_rating':forms.Select(attrs={'class':'form-control'}),
-#         'feedback':forms.Textarea(attrs={'class':'form-control'})}
         
 class GeeksForm(forms.Form):
     email = forms.EmailField(required=True)

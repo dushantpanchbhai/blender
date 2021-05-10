@@ -1,0 +1,22 @@
+[33mcommit acec2982ccbae79f1b65324218406ac9261c8819[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: dushantpanchbhai <dushantrpanchbhai@gmail.com>
+Date:   Thu Feb 11 02:11:09 2021 +0530
+
+    un2
+
+[1mdiff --git a/Pages/__pycache__/views.cpython-38.pyc b/Pages/__pycache__/views.cpython-38.pyc[m
+[1mindex 501a45d..e3b68c5 100644[m
+Binary files a/Pages/__pycache__/views.cpython-38.pyc and b/Pages/__pycache__/views.cpython-38.pyc differ
+[1mdiff --git a/Pages/views.py b/Pages/views.py[m
+[1mindex 7b437e9..a823d3a 100644[m
+[1m--- a/Pages/views.py[m
+[1m+++ b/Pages/views.py[m
+[36m@@ -12,7 +12,7 @@[m [mfrom django.contrib import auth[m
+ q="home"[m
+ [m
+ def home(request):[m
+[31m-    video = Tutorial.objects.all()[:4][m
+[32m+[m[32m    video = Tutorial.objects.all()[:6][m
+     models= Models.objects.all()[:3][m
+     return render(request,'Main.html',{'video':video ,'models':models})[m
+ [m

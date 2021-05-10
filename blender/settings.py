@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     #'Pages.apps.PagesConfig',
     'Pages',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [

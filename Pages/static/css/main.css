@@ -312,7 +312,7 @@ a{
 {
     width: 40px;
     text-decoration: none;
-    transition: 0.3s ease-in-out !important;
+    transition: 0.1s ease-in-out !important;
 }
 
 .social a img:hover
