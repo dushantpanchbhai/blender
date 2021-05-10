@@ -9,7 +9,19 @@
 a{
     text-decoration: none;
 }
+.navbar-nav
+{
+    margin-left: auto;
+}
 
+#buttonright
+{
+    background-color: #2792e9;
+    font-family: sans-serif;
+    border-radius: 3px;
+    border: none;
+    color: white;
+}
 #menu
 {
     height: 100vh;
@@ -264,14 +276,14 @@ a{
     position: relative;
     /* left: 40%; */
     border-radius: 50%;
-    width: 250px;
+    width: 150px;
 }
 
 .about-content h2
 {
-    padding-top: 20px;
+    padding-top: 50px;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .about-content p
@@ -298,9 +310,15 @@ a{
 
 .social a img
 {
-    width: 50px;
+    width: 40px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out !important;
 }
 
+.social a img:hover
+{
+    transform: scale(1.2) !important;
+}
 .footer
 {
     text-align: center;

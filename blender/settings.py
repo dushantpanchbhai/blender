@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     #
     # The following apps are required:
     'django.contrib.sites',
-
+    
+    
+    #social servers
     'social_django',
     'allauth',
     'allauth.account',
@@ -49,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
     #'Pages.apps.PagesConfig',
     'Pages',
 ]
@@ -145,17 +149,20 @@ LOGIN_REDIRECT_URL = '/'
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-
     # `allauth` specific authentication methods, such as login by e-mail
     #'allauth.account.auth_backends.AuthenticationBackend',
 
 ]
 
+
+SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         # For each OAuth based provider, either add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
+        'SCOPE' : ['profile','email'],
+
         'APP': {
             'client_id': '4dcfd575af3b17066907',
             'secret': 'c9dc8e4d4c50d6056f48b4d73969d5d20a088b57',
@@ -166,10 +173,17 @@ SOCIALACCOUNT_PROVIDERS = {
         # For each OAuth based provider, either add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
+        'SCOPE': [
+                'profile',
+                'email'],
+
+        'AUTH_PARAMS':{
+                'access_type': 'online',
+            },
         'APP': {
             'client_id': '495710553655-092qrsjom64q8ia27c6fhoitmlipl84k.apps.googleusercontent.com',
             'secret': 'iwvmhKhgIpFHsjtF_TrRPRXI',
-            'key': ''
+            'key': '',
         }
     },
     'linkedin_oauth2': {

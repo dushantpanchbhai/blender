@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% load static %}
+{%block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<div class='container p-lg-2'>
+<h1 class="text-center">welcome to analytics</h1>
+<h3>Feedback</h3>
+{%for i in feedback.all%}
+<div class="alert alert-success">
+    {{i.id}}. Email :  {{i.email}}
+    <br>
+    website rating : {{i.website_rating}}
+    <br>
+    artwork rating : {{i.artwork_rating}}
+    <br>
+    youtube rating : {{i.youtube_rating}}
+    <br>
+    feedback : {{i.feedback}}
+    <br>
+</div>
+{%endfor%}
+<br>
+<h3>Logins</h3>
+{%for i in info.all%}
+<div class="alert alert-primary">
+    {{i.number}}. Email :  {{i.email}}
+    <br>
+    First Name : {{i.Firstname}}
+    <br>
+    Last Name : {{i.Lastname}}
+    <br>
+    join : {{i.join}}
+    <br>
+    Last login : {{i.last_active}}
+    <br>
+</div>
+{%endfor%}
+<br>
+<h3>Downloads</h3>
+{%for i in models.all%}
+<div class="alert alert-info">
+    {{i.id}}. Title :  {{i.title}}
+    <br>
+    Downloads : {{i.downloads}}
+    <br>
+</div>
+{%endfor%}
+
+</div>
+{%endblock%}
